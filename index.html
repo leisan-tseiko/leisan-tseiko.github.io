@@ -1,616 +1,265 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Leisan Tseiko | Finance & Data Analytics</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<title>Leisan Tseiko | Finance Portfolio</title>
 
-  <style>
-    :root {
-      --bg: #f3f5ef;
-      --surface: #e7ecdf;
-      --surface-2: #dde5d2;
-      --card: #ffffff;
-      --text: #162018;
-      --muted: #556256;
-      --line: rgba(22, 32, 24, 0.10);
-      --dark: #162018;
-      --btn: #1c261d;
-      --btn-hover: #0f1710;
-      --soft-shadow: 0 20px 60px rgba(22, 32, 24, 0.10);
-      --radius-xl: 36px;
-      --radius-lg: 24px;
-      --radius-md: 18px;
-      --max-width: 1240px;
-    }
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    * {
-      box-sizing: border-box;
-    }
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-    html {
-      scroll-behavior: smooth;
-    }
+<style>
 
-    body {
-      margin: 0;
-      font-family: "Inter", sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.6;
-    }
+:root{
+--green:#1f4d3a;
+--light:#f4f7f5;
+--text:#111;
+--muted:#6b6b6b;
+}
 
-    img {
-      max-width: 100%;
-      display: block;
-    }
+body{
+font-family:Inter, sans-serif;
+color:var(--text);
+}
 
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
+.navbar{
+padding:18px 0;
+}
 
-    .page-wrap {
-      width: min(100% - 32px, var(--max-width));
-      margin: 24px auto;
-      background: linear-gradient(180deg, var(--surface) 0%, #eef2e8 100%);
-      border-radius: 40px;
-      box-shadow: var(--soft-shadow);
-      overflow: hidden;
-      border: 1px solid rgba(255,255,255,0.45);
-    }
+.brand{
+font-weight:700;
+font-size:1.4rem;
+}
 
-    .topbar {
-      display: grid;
-      grid-template-columns: 1fr auto 1fr;
-      align-items: center;
-      gap: 24px;
-      padding: 26px 36px 18px;
-    }
+.hero{
+padding:120px 0;
+background:var(--light);
+}
 
-    .brand {
-      font-weight: 700;
-      letter-spacing: -0.02em;
-      font-size: 1rem;
-    }
+.hero h1{
+font-size:3.2rem;
+font-weight:700;
+line-height:1.1;
+max-width:540px;
+}
 
-    .nav {
-      display: flex;
-      justify-content: center;
-      gap: 28px;
-    }
+.hero-text{
+margin-top:20px;
+max-width:520px;
+color:var(--muted);
+}
 
-    .nav a {
-      font-size: 0.96rem;
-      color: var(--muted);
-      font-weight: 500;
-      transition: 0.2s ease;
-    }
+.photo-card{
+background:white;
+border-radius:16px;
+padding:20px;
+box-shadow:0 20px 40px rgba(0,0,0,0.08);
+}
 
-    .nav a:hover {
-      color: var(--text);
-    }
+.photo-placeholder{
+height:420px;
+border-radius:12px;
+background:linear-gradient(135deg,#e7efe9,#dfe9e3);
+display:flex;
+align-items:center;
+justify-content:center;
+color:#777;
+font-size:14px;
+}
 
-    .topbar-right {
-      display: flex;
-      justify-content: flex-end;
-    }
+.section{
+padding:90px 0;
+}
 
-    .small-btn {
-      padding: 10px 16px;
-      border: 1px solid var(--line);
-      border-radius: 999px;
-      background: rgba(255,255,255,0.45);
-      color: var(--text);
-      font-size: 0.92rem;
-      font-weight: 600;
-      transition: 0.2s ease;
-    }
+.project-card{
+background:white;
+padding:28px;
+border-radius:14px;
+box-shadow:0 15px 30px rgba(0,0,0,0.06);
+transition:all .25s;
+}
 
-    .small-btn:hover {
-      background: #fff;
-    }
+.project-card:hover{
+transform:translateY(-6px);
+}
 
-    .hero {
-      padding: 22px 36px 42px;
-    }
+.skills{
+background:var(--light);
+}
 
-    .hero-box {
-      display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 32px;
-      align-items: stretch;
-      background: rgba(255,255,255,0.18);
-      border: 1px solid rgba(255,255,255,0.35);
-      border-radius: var(--radius-xl);
-      padding: 28px;
-      backdrop-filter: blur(6px);
-    }
+.skill-badge{
+background:#e8f0eb;
+padding:8px 14px;
+border-radius:30px;
+margin:6px;
+display:inline-block;
+font-size:14px;
+}
 
-    .hero-left {
-      padding: 26px 14px 10px 10px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      min-height: 560px;
-    }
+.socials{
+margin-top:30px;
+}
 
-    .eyebrow {
-      display: inline-block;
-      font-size: 0.82rem;
-      letter-spacing: 0.20em;
-      text-transform: uppercase;
-      color: var(--muted);
-      margin-bottom: 18px;
-      font-weight: 700;
-    }
+.socials a{
+margin-right:16px;
+text-decoration:none;
+font-weight:500;
+color:var(--green);
+}
 
-    .hero h1 {
-      margin: 0;
-      font-size: clamp(2.6rem, 5.4vw, 5.2rem);
-      line-height: 0.98;
-      letter-spacing: -0.04em;
-      font-weight: 800;
-      max-width: 700px;
-    }
+footer{
+padding:40px 0;
+text-align:center;
+color:#888;
+}
 
-    .hero-text {
-      margin-top: 24px;
-      max-width: 600px;
-      font-size: 1.02rem;
-      color: var(--muted);
-    }
+</style>
 
-    .hero-socials {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 34px;
-    }
-
-    .pill {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 12px 18px;
-      border-radius: 999px;
-      border: 1px solid var(--line);
-      background: rgba(255,255,255,0.55);
-      font-size: 0.94rem;
-      font-weight: 600;
-      color: var(--text);
-      transition: 0.2s ease;
-    }
-
-    .pill:hover {
-      background: #ffffff;
-      transform: translateY(-1px);
-    }
-
-    .pill.dark {
-      background: var(--btn);
-      color: #fff;
-      border-color: var(--btn);
-    }
-
-    .pill.dark:hover {
-      background: var(--btn-hover);
-    }
-
-    .hero-visual {
-      position: relative;
-      min-height: 560px;
-      border-radius: 32px;
-      overflow: hidden;
-      background:
-        radial-gradient(circle at top left, rgba(255,255,255,0.65), transparent 32%),
-        linear-gradient(145deg, #cfd8c4 0%, #bcc8b4 48%, #e4eadb 100%);
-      border: 1px solid rgba(255,255,255,0.42);
-      display: flex;
-      align-items: flex-end;
-      justify-content: center;
-      padding: 22px;
-    }
-
-    .hero-photo-frame {
-      width: 100%;
-      height: 100%;
-      border-radius: 28px;
-      overflow: hidden;
-      background: rgba(255,255,255,0.35);
-      position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .hero-photo-frame img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .hero-photo-placeholder {
-      width: 100%;
-      height: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      color: #4f5b50;
-      font-size: 0.98rem;
-      padding: 24px;
-      background:
-        linear-gradient(180deg, rgba(255,255,255,0.28), rgba(255,255,255,0.08)),
-        repeating-linear-gradient(
-          135deg,
-          rgba(255,255,255,0.15),
-          rgba(255,255,255,0.15) 10px,
-          rgba(255,255,255,0.05) 10px,
-          rgba(255,255,255,0.05) 20px
-        );
-    }
-
-    .sections {
-      padding: 12px 36px 44px;
-    }
-
-    .section {
-      background: rgba(255,255,255,0.62);
-      border: 1px solid rgba(255,255,255,0.55);
-      border-radius: 28px;
-      padding: 34px 30px;
-      margin-bottom: 24px;
-    }
-
-    .section-title {
-      margin: 0 0 16px;
-      font-size: 1.8rem;
-      line-height: 1.1;
-      letter-spacing: -0.03em;
-    }
-
-    .section-text {
-      margin: 0;
-      color: var(--muted);
-      max-width: 880px;
-      font-size: 1rem;
-    }
-
-    .about-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 20px;
-    }
-
-    .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 18px;
-      margin-top: 22px;
-    }
-
-    .card {
-      background: var(--card);
-      border: 1px solid var(--line);
-      border-radius: 22px;
-      padding: 22px;
-      min-height: 210px;
-      box-shadow: 0 10px 24px rgba(22, 32, 24, 0.05);
-    }
-
-    .card h3 {
-      margin: 0 0 10px;
-      font-size: 1.15rem;
-      line-height: 1.2;
-      letter-spacing: -0.02em;
-    }
-
-    .card p {
-      margin: 0;
-      color: var(--muted);
-      font-size: 0.97rem;
-    }
-
-    .skills-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 18px;
-      margin-top: 22px;
-    }
-
-    .skill-card {
-      background: #fff;
-      border: 1px solid var(--line);
-      border-radius: 22px;
-      padding: 22px;
-      box-shadow: 0 10px 24px rgba(22, 32, 24, 0.05);
-    }
-
-    .skill-card h3 {
-      margin: 0 0 10px;
-      font-size: 1.05rem;
-      letter-spacing: -0.02em;
-    }
-
-    .skill-card p {
-      margin: 0;
-      color: var(--muted);
-      font-size: 0.96rem;
-    }
-
-    .contact-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 20px;
-    }
-
-    .footer {
-      padding: 0 36px 34px;
-      color: #667266;
-      font-size: 0.92rem;
-    }
-
-    @media (max-width: 1100px) {
-      .hero-box {
-        grid-template-columns: 1fr;
-      }
-
-      .hero-left,
-      .hero-visual {
-        min-height: auto;
-      }
-
-      .hero h1 {
-        max-width: 100%;
-      }
-    }
-
-    @media (max-width: 860px) {
-      .topbar {
-        grid-template-columns: 1fr;
-        justify-items: center;
-        text-align: center;
-      }
-
-      .topbar-right {
-        justify-content: center;
-      }
-
-      .nav {
-        flex-wrap: wrap;
-      }
-
-      .projects-grid,
-      .skills-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .hero,
-      .sections,
-      .footer {
-        padding-left: 20px;
-        padding-right: 20px;
-      }
-
-      .hero-box,
-      .section {
-        padding: 22px;
-      }
-
-      .hero-left {
-        padding: 8px 0 0;
-      }
-    }
-
-    @media (max-width: 560px) {
-      .page-wrap {
-        width: min(100% - 14px, var(--max-width));
-        margin: 10px auto;
-        border-radius: 24px;
-      }
-
-      .topbar {
-        padding: 20px 18px 8px;
-      }
-
-      .hero {
-        padding: 10px 18px 24px;
-      }
-
-      .sections {
-        padding: 8px 18px 24px;
-      }
-
-      .footer {
-        padding: 0 18px 24px;
-      }
-
-      .hero h1 {
-        font-size: clamp(2.2rem, 11vw, 3.4rem);
-      }
-
-      .section-title {
-        font-size: 1.5rem;
-      }
-    }
-  </style>
 </head>
+
 <body>
-  <div class="page-wrap">
 
-    <header class="topbar">
-      <div class="brand">Leisan Tseiko</div>
+<nav class="navbar navbar-expand-lg bg-white shadow-sm">
+<div class="container">
 
-      <nav class="nav">
-        <a href="#about">About</a>
-        <a href="#projects">Projects</a>
-        <a href="#skills">Skills</a>
-        <a href="#contact">Contact</a>
-      </nav>
+<span class="brand">Leisan Tseiko</span>
 
-      <div class="topbar-right">
-        <a href="#contact" class="small-btn">Let’s Connect</a>
-      </div>
-    </header>
+<div class="ms-auto">
+<a class="me-4 text-dark text-decoration-none" href="#about">About</a>
+<a class="me-4 text-dark text-decoration-none" href="#projects">Projects</a>
+<a class="me-4 text-dark text-decoration-none" href="#skills">Skills</a>
+<a class="text-dark text-decoration-none" href="#contact">Contact</a>
+</div>
 
-    <section class="hero">
-      <div class="hero-box">
-        <div class="hero-left">
-          <div>
-            <span class="eyebrow">Finance & Data Analytics</span>
+</div>
+</nav>
 
-            <h1>
-              Finance professional<br>
-              growing into data analytics<br>
-              through real projects
-            </h1>
 
-            <p class="hero-text">
-              10+ years in finance with hands-on experience working with financial data,
-              data collection, analytical support, and process coordination — now building
-              a portfolio focused on analytics, business insight, Excel, SQL, and Power BI.
-            </p>
-          </div>
+<section class="hero">
+<div class="container">
 
-          <div class="hero-socials">
-            <a class="pill dark" href="#projects">View Projects</a>
-            <a class="pill" href="#about">About Me</a>
-            <a class="pill" href="#contact">Email</a>
-            <a class="pill" href="https://www.linkedin.com/in/leisan-tseiko/" target="_blank">LinkedIn</a>
-            <a class="pill" href="https://github.com/leisan-tseiko" target="_blank">GitHub</a>
-            <a class="pill" href="#">Resume</a>
-          </div>
-        </div>
+<div class="row align-items-center">
 
-        <div class="hero-visual">
-          <div class="hero-photo-frame">
-            <!-- Когда загрузишь свою фотографию, замени блок ниже на строку с img -->
+<div class="col-lg-6">
 
-            <div class="hero-photo-placeholder">
-              Business photo placeholder<br><br>
-              Later we can place your professional portrait here.<br>
-              Example path: <strong>images/profile/leisan-photo.jpg</strong>
-            </div>
+<h1>
+Finance professional<br>
+growing into data analytics<br>
+through real projects
+</h1>
 
-            <!-- Пример для будущего:
-            <img src="images/profile/leisan-photo.jpg" alt="Leisan Tseiko">
-            -->
-          </div>
-        </div>
-      </div>
-    </section>
+<p class="hero-text">
+10+ years in finance with hands-on experience working with financial data,
+data collection, analytical support, and process coordination —
+now building a portfolio focused on analytics, business insight,
+Excel, SQL and Power BI.
+</p>
 
-    <main class="sections">
+<div class="socials">
 
-      <section class="section" id="about">
-        <h2 class="section-title">About</h2>
-        <p class="section-text">
-          I am a finance professional with broad experience across financial and economic functions in Russia.
-          Over the years, I worked extensively with financial data, data collection, analysis in financial systems,
-          and coordination of business processes. My background includes supporting analytical work, reviewing data
-          accuracy, and organizing information for decision-making. Today, I am strengthening this foundation with
-          a growing focus on data analytics and portfolio-based projects for the U.S. market.
-        </p>
+<a href="#">LinkedIn</a>
 
-        <div class="about-actions">
-          <a class="pill dark" href="#">Download Resume</a>
-          <a class="pill" href="https://www.linkedin.com/in/leisan-tseiko/" target="_blank">LinkedIn Profile</a>
-        </div>
-      </section>
+<a href="#">GitHub</a>
 
-      <section class="section" id="projects">
-        <h2 class="section-title">Projects</h2>
-        <p class="section-text">
-          A growing portfolio of finance and analytics work, including labor market analysis, financial data projects,
-          dashboard development, and structured business insights.
-        </p>
+<a href="#">Resume</a>
 
-        <div class="projects-grid">
-          <article class="card">
-            <h3>Florida Finance Job Market Analysis</h3>
-            <p>
-              Research project focused on finance vacancies in Florida, including market demand,
-              salary observations, role categories, and skill trends.
-            </p>
-          </article>
+</div>
 
-          <article class="card">
-            <h3>Excel-Based Financial Analysis</h3>
-            <p>
-              Structured work with financial data in spreadsheets, including organization,
-              comparison, interpretation, and practical analytical presentation.
-            </p>
-          </article>
+</div>
 
-          <article class="card">
-            <h3>Power BI Dashboard Development</h3>
-            <p>
-              Building portfolio-ready dashboards focused on finance-related metrics,
-              clean layout, and business-friendly visualization.
-            </p>
-          </article>
 
-          <article class="card">
-            <h3>SQL Learning & Analytical Practice</h3>
-            <p>
-              Developing SQL skills for data querying, structured analysis,
-              and stronger technical support for financial analytics projects.
-            </p>
-          </article>
-        </div>
-      </section>
+<div class="col-lg-6">
 
-      <section class="section" id="skills">
-        <h2 class="section-title">Skills</h2>
-        <p class="section-text">
-          A combination of finance background, analytical thinking, and growing technical capability.
-        </p>
+<div class="photo-card">
 
-        <div class="skills-grid">
-          <div class="skill-card">
-            <h3>Tools</h3>
-            <p>Excel • Power BI • SQL</p>
-          </div>
+<div class="photo-placeholder">
+Your professional photo will be placed here
+</div>
 
-          <div class="skill-card">
-            <h3>Data & Analytics</h3>
-            <p>Financial Data Analysis • Data Collection • Data Interpretation • Data Visualization</p>
-          </div>
+</div>
 
-          <div class="skill-card">
-            <h3>Finance Background</h3>
-            <p>Financial Systems • Process Coordination • Analytical Support • Business Insights</p>
-          </div>
-        </div>
-      </section>
+</div>
 
-      <section class="section" id="contact">
-        <h2 class="section-title">Contact</h2>
-        <p class="section-text">
-          I am building my portfolio for finance and analytics opportunities in the U.S. market.
-          You can connect with me through LinkedIn, GitHub, or email.
-        </p>
+</div>
 
-        <div class="contact-links">
-          <a class="pill dark" href="mailto:your-email@example.com">Email Me</a>
-          <a class="pill" href="https://www.linkedin.com/in/leisan-tseiko/" target="_blank">LinkedIn</a>
-          <a class="pill" href="https://github.com/leisan-tseiko" target="_blank">GitHub</a>
-          <a class="pill" href="#">Resume</a>
-        </div>
-      </section>
+</div>
+</section>
 
-    </main>
 
-    <footer class="footer">
-      © Leisan Tseiko — Finance & Data Analytics Portfolio
-    </footer>
-  </div>
+
+<section id="projects" class="section">
+<div class="container">
+
+<h2 class="mb-5">Projects</h2>
+
+<div class="row g-4">
+
+<div class="col-md-4">
+<div class="project-card">
+<h5>Payroll Dashboard</h5>
+<p>Data analysis project exploring payroll metrics and cost structure.</p>
+</div>
+</div>
+
+<div class="col-md-4">
+<div class="project-card">
+<h5>Financial Data Analysis</h5>
+<p>Excel based financial dataset exploration and trend analysis.</p>
+</div>
+</div>
+
+<div class="col-md-4">
+<div class="project-card">
+<h5>Business Metrics</h5>
+<p>SQL queries and data modelling to analyse operational metrics.</p>
+</div>
+</div>
+
+</div>
+
+</div>
+</section>
+
+
+
+<section id="skills" class="section skills">
+<div class="container">
+
+<h2 class="mb-4">Skills</h2>
+
+<div>
+
+<span class="skill-badge">Excel</span>
+<span class="skill-badge">SQL</span>
+<span class="skill-badge">Power BI</span>
+<span class="skill-badge">Financial Data</span>
+<span class="skill-badge">Data Analysis</span>
+<span class="skill-badge">Business Metrics</span>
+
+</div>
+
+</div>
+</section>
+
+
+
+<section id="contact" class="section">
+<div class="container">
+
+<h2>Contact</h2>
+
+<p>Email and professional contacts will appear here.</p>
+
+</div>
+</section>
+
+
+
+<footer>
+© Leisan Tseiko
+</footer>
+
 </body>
 </html>
