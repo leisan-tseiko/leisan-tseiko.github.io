@@ -6,6 +6,7 @@
   <title>Leisan Tseiko | Finance & Data Analytics</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
@@ -13,8 +14,8 @@
     :root{
       --green:#1a3d2b;
       --green-soft:#2a5c3f;
-      --light:#f0f5f2;
-      --light-2:#e8efe9;
+      --light:#f0ede6;
+      --light-2:#e8e4dc;
       --text:#111111;
       --muted:#5f675f;
       --white:#ffffff;
@@ -69,8 +70,9 @@
 
     .brand{
       font-size:1.7rem;
+      font-family:"Playfair Display", serif;
       font-weight:700;
-      letter-spacing:-0.02em;
+      letter-spacing:0em;
     }
 
     .nav-center{
@@ -96,7 +98,9 @@
     }
 
     .hero{
-      background:var(--light);
+      background-image: linear-gradient(rgba(240,237,230,0.82), rgba(240,237,230,0.82)), url("images/office-hero.png");
+      background-size:cover;
+      background-position:center;
       padding:64px 0 72px;
     }
 
@@ -111,22 +115,14 @@
       max-width:600px;
     }
 
-    .eyebrow{
-      font-size:.86rem;
-      font-weight:700;
-      letter-spacing:.16em;
-      text-transform:uppercase;
-      color:var(--green);
-      margin-bottom:18px;
-    }
-
     .hero h1{
       margin:0;
-      font-size:clamp(2.7rem, 5vw, 4.25rem);
+      font-family:"Playfair Display", serif;
+      font-size:2.3rem;
       font-weight:700;
-      line-height:1.08;
-      letter-spacing:-0.04em;
-      max-width:620px;
+      line-height:1.3;
+      letter-spacing:0em;
+      max-width:520px;
     }
 
     .hero h1 .accent{
@@ -178,7 +174,7 @@
     }
 
     .hero-visual-wrap{
-      background:#f7faf7;
+      background:#ffffff22;
       border-radius:26px;
       padding:18px;
       box-shadow:var(--shadow);
@@ -186,7 +182,7 @@
     }
 
     .hero-visual{
-      background:linear-gradient(180deg, #dfe8e0 0%, #d4ddd5 100%);
+      background:linear-gradient(180deg, rgba(221,216,206,0.5) 0%, rgba(204,197,184,0.5) 100%);
       border-radius:20px;
       min-height:520px;
       overflow:hidden;
@@ -221,17 +217,19 @@
 
     .section-title{
       margin:0 0 16px;
+      font-family:"Playfair Display", serif;
       font-size:2.1rem;
       line-height:1.08;
-      letter-spacing:-0.03em;
+      letter-spacing:0em;
+      color:#000000;
     }
 
     .section-text{
       margin:0;
       max-width:820px;
-      color:var(--muted);
+      color:#111111;
       line-height:1.8;
-      font-size:1rem;
+      font-size:1.1rem;
     }
 
     .about-box{
@@ -251,9 +249,9 @@
     }
 
     .about-mini{
-      color:var(--muted);
+      color:#111111;
       line-height:1.8;
-      font-size:0.97rem;
+      font-size:1rem;
     }
 
     .about-mini strong{
@@ -306,6 +304,23 @@
       color:var(--muted);
       line-height:1.75;
       font-size:0.98rem;
+    }
+
+    .project-meta{
+      margin-top:18px;
+      padding-top:16px;
+      border-top:1px solid var(--line);
+      display:flex;
+      flex-direction:column;
+      gap:8px;
+      color:var(--muted);
+      font-size:0.92rem;
+      line-height:1.6;
+    }
+
+    .project-meta strong{
+      color:var(--text);
+      font-weight:600;
     }
 
     .skills-grid{
@@ -393,7 +408,7 @@
       }
 
       .hero h1{
-        font-size:clamp(2.2rem, 9vw, 3.1rem);
+        font-size:clamp(1.7rem, 7vw, 2.2rem);
       }
 
       .section-title{
@@ -404,22 +419,6 @@
         min-height:340px;
       }
     }
-    .project-meta{
-  margin-top:18px;
-  padding-top:16px;
-  border-top:1px solid var(--line);
-  display:flex;
-  flex-direction:column;
-  gap:8px;
-  color:var(--muted);
-  font-size:0.92rem;
-  line-height:1.6;
-}
-
-.project-meta strong{
-  color:var(--text);
-  font-weight:600;
-}
   </style>
 </head>
 <body>
@@ -446,15 +445,11 @@
       <div class="hero-grid">
 
         <div class="hero-copy">
-          <div class="eyebrow">Finance Portfolio</div>
-
           <h1>
             Finance professional<br>
             growing into <span class="accent">data analytics</span><br>
             through real projects
           </h1>
-
-         
 
           <div class="pill-group">
             <a class="pill primary" href="#projects">View Projects</a>
@@ -466,16 +461,7 @@
         <div class="hero-visual-wrap">
           <div class="hero-visual">
             <!-- Когда загрузишь фото, замени блок ниже на строку img -->
-
-            <div class="photo-placeholder">
-              Your professional photo will be placed here<br><br>
-              Future file path example:<br>
-              <strong>images/profile/leisan-photo.jpg</strong>
-            </div>
-
-            <!-- Пример будущей вставки:
-            <img src="images/profile/leisan-photo.jpg" alt="Leisan Tseiko">
-            -->
+<img src="images/leisan-photo.jpg" alt="Leisan Tseiko">
           </div>
         </div>
 
@@ -483,18 +469,14 @@
     </div>
   </section>
 
-  <section id="about" class="section">
+  <section id="about" class="section" style="background: linear-gradient(rgba(255,255,255,0.65), rgba(255,255,255,0.65)) center/cover, url("images/office-about.png") center/cover no-repeat;">
     <div class="container">
       <h2 class="section-title">About</h2>
       <p class="section-text">
-Finance professional with 10+ years of experience in financial and economic roles.
-
-My background includes working with financial data, data collection,
-analytical support, and coordination of financial processes across different functions.
-
-Currently expanding my expertise through practical projects in Excel, SQL,
-Power BI, and finance-focused data analytics.
-</p>
+        Finance professional with 10+ years of experience in financial and economic roles.
+        My background includes working with financial data, data collection,
+        analytical support, and coordination of financial processes across different functions.
+      </p>
 
       <div class="about-box">
         <div class="about-card">
@@ -506,8 +488,7 @@ Power BI, and finance-focused data analytics.
 
         <div class="about-card">
           <p class="about-mini">
-            <strong>Current focus:</strong> portfolio projects, analytics skills development,
-            and positioning for finance and data-related opportunities in the U.S.
+            <strong>Current focus:</strong> Developing and refining analytical skills, and positioning oneself for career opportunities in the fields of finance and data in the United States.
           </p>
         </div>
       </div>
@@ -515,73 +496,70 @@ Power BI, and finance-focused data analytics.
   </section>
 
   <section id="projects" class="section section-light">
-  <div class="container">
-    <h2 class="section-title">Projects</h2>
-    <p class="section-text">
-      A growing portfolio of practical work in finance, analytics, and structured data interpretation.
-    </p>
+    <div class="container">
+      <h2 class="section-title">Projects</h2>
+      <p class="section-text">
+        A growing portfolio of practical work in finance, analytics, and structured data interpretation.
+      </p>
 
-    <div class="projects-grid">
+      <div class="projects-grid">
 
-      <article class="project-card">
-        <span class="project-tag">Market Analysis</span>
-        <h3>Florida Finance Job Market Analysis</h3>
-        <p>
-          Independent research project analyzing finance and accounting vacancies in Florida.
-          Focused on role demand, recurring requirements, salary observations, and skill trends across job postings.
-        </p>
+        <article class="project-card">
+          <span class="project-tag">Market Analysis</span>
+          <h3>Florida Finance Job Market Analysis</h3>
+          <p>
+            Independent research project analyzing finance and accounting vacancies in Florida.
+            Focused on role demand, recurring requirements, salary observations, and skill trends across job postings.
+          </p>
+          <div class="project-meta">
+            <div><strong>Tools:</strong> Excel, structured job tracking, market research</div>
+            <div><strong>Status:</strong> In progress</div>
+          </div>
+        </article>
 
-        <div class="project-meta">
-          <div><strong>Tools:</strong> Excel, structured job tracking, market research</div>
-          <div><strong>Status:</strong> In progress</div>
-        </div>
-      </article>
+        <article class="project-card">
+          <span class="project-tag">Excel Analytics</span>
+          <h3>Structuring Financial Data in Excel</h3>
+          <p>
+            Analytical work focused on collecting, organizing, comparing, and interpreting financial information
+            in spreadsheet format to support clearer insights and decision-making.
+          </p>
+          <div class="project-meta">
+            <div><strong>Tools:</strong> Excel, formulas, tables, data organization</div>
+            <div><strong>Status:</strong> Portfolio case</div>
+          </div>
 
-      <article class="project-card">
-        <span class="project-tag">Excel Analytics</span>
-        <h3>Financial Data Structuring in Excel</h3>
-        <p>
-          Analytical work focused on collecting, organizing, comparing, and interpreting financial information
-          in spreadsheet format to support clearer insights and decision-making.
-        </p>
+        </article>
 
-        <div class="project-meta">
-          <div><strong>Tools:</strong> Excel, formulas, tables, data organization</div>
-          <div><strong>Status:</strong> Portfolio case</div>
-        </div>
-      </article>
+        <article class="project-card">
+          <span class="project-tag">Dashboard Design</span>
+          <h3>Power BI Dashboard Development</h3>
+          <p>
+            Portfolio-oriented dashboard development with a focus on business readability,
+            finance-related KPIs, and clean visual presentation of data.
+          </p>
+          <div class="project-meta">
+            <div><strong>Tools:</strong> Power BI, data visualization, KPI layout</div>
+            <div><strong>Status:</strong> In development</div>
+          </div>
+        </article>
 
-      <article class="project-card">
-        <span class="project-tag">Dashboard Design</span>
-        <h3>Power BI Dashboard Development</h3>
-        <p>
-          Portfolio-oriented dashboard development with a focus on business readability,
-          finance-related KPIs, and clean visual presentation of data.
-        </p>
+        <article class="project-card">
+          <span class="project-tag">SQL Practice</span>
+          <h3>SQL for Financial Data Analysis</h3>
+          <p>
+            Ongoing technical practice aimed at querying structured datasets,
+            strengthening analytical workflows, and expanding data analysis capability.
+          </p>
+          <div class="project-meta">
+            <div><strong>Tools:</strong> SQL, structured queries, analytical practice</div>
+            <div><strong>Status:</strong> Learning project</div>
+          </div>
+        </article>
 
-        <div class="project-meta">
-          <div><strong>Tools:</strong> Power BI, data visualization, KPI layout</div>
-          <div><strong>Status:</strong> In development</div>
-        </div>
-      </article>
-
-      <article class="project-card">
-        <span class="project-tag">SQL Practice</span>
-        <h3>SQL for Financial Data Analysis</h3>
-        <p>
-          Ongoing technical practice aimed at querying structured datasets,
-          strengthening analytical workflows, and expanding data analysis capability.
-        </p>
-
-        <div class="project-meta">
-          <div><strong>Tools:</strong> SQL, structured queries, analytical practice</div>
-          <div><strong>Status:</strong> Learning project</div>
-        </div>
-      </article>
-
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
   <section id="skills" class="section">
     <div class="container">
@@ -612,13 +590,9 @@ Power BI, and finance-focused data analytics.
   <section id="contact" class="section section-light">
     <div class="container">
       <h2 class="section-title">Contact</h2>
-      <p class="section-text">
-        Connect with me for finance, analytics, and portfolio-related opportunities.
-      </p>
-
       <div class="contact-box">
         <div class="pill-group">
-          <a class="pill primary" href="mailto:your-email@example.com">Email</a>
+          <a class="pill primary" href="/cdn-cgi/l/email-protection#30495f45421d555d51595c705548515d405c551e535f5d">Email</a>
           <a class="pill" href="https://www.linkedin.com/in/l%D0%B5ysan-t-5b3844375/" target="_blank">LinkedIn</a>
           <a class="pill" href="#">Resume</a>
         </div>
@@ -627,8 +601,4 @@ Power BI, and finance-focused data analytics.
   </section>
 
   <footer class="footer">
-    © Leisan Tseiko
-  </footer>
-
-</body>
-</html>
+     
