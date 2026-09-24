@@ -402,18 +402,35 @@
       margin-top:30px;
     }
 
+    /* "Notebook" cards: green spine on the left, gold bookmark ribbon top-right */
     .skill-card{
-      background:#ffffff;
+      position:relative;
+      background:#fffdf8;
       border:1px solid var(--line);
-      border-radius:22px;
-      padding:24px;
-      box-shadow:0 12px 28px rgba(26,61,43,0.04);
+      border-left:8px solid var(--green);
+      border-radius:6px 18px 18px 6px;
+      padding:24px 24px 24px 22px;
+      box-shadow:0 2px 6px rgba(26,61,43,0.06), 0 16px 36px rgba(26,61,43,0.10);
+    }
+
+    .skill-card::after{
+      content:"";
+      position:absolute;
+      top:-1px;
+      right:22px;
+      width:16px;
+      height:26px;
+      background:#c9a227;
+      clip-path:polygon(0 0, 100% 0, 100% 100%, 50% 72%, 0 100%);
     }
 
     .skill-card h3{
       margin:0 0 10px;
-      font-size:1.12rem;
-      letter-spacing:-0.01em;
+      padding-right:30px;
+      font-family:"Playfair Display", serif;
+      font-size:1.3rem;
+      font-weight:700;
+      line-height:1.25;
     }
 
     .skill-card p{
