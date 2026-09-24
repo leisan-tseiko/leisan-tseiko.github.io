@@ -360,7 +360,6 @@
     .about-media{
       position:relative;
       min-height:100%;
-      background:linear-gradient(160deg, #dde6df 0%, var(--light-2) 45%, var(--light) 100%);
       -webkit-mask-image:linear-gradient(to right, #000 55%, transparent);
       mask-image:linear-gradient(to right, #000 55%, transparent);
     }
@@ -847,6 +846,45 @@
       .project-card{
         padding:20px 20px 24px;
       }
+
+      .pill-group{
+        margin-top:26px;
+        gap:8px;
+      }
+
+      .pill{
+        padding:9px 15px;
+        font-size:14px;
+      }
+
+      .hero-photo{
+        width:100%;
+        height:min(440px, 60vh);
+        object-position:center 25%;
+      }
+
+      .tr-data{
+        padding:14px 14px;
+      }
+
+      .tr-data code{
+        font-size:.8rem;
+      }
+
+      .tr-answer{
+        padding:16px 16px;
+      }
+    }
+
+    @media (max-width: 360px){
+      .pill{
+        padding:8px 12px;
+        font-size:13px;
+      }
+
+      .contact-text{
+        font-size:1rem;
+      }
     }
 
     @media (max-width: 679.98px){
@@ -1046,7 +1084,7 @@
 
   <section id="about" class="about">
     <div class="about-media" aria-hidden="true">
-      <img src="images/about-bg.webp" alt="" width="1920" height="1072" loading="lazy" decoding="async">
+      <img src="images/about-bg.webp" alt="" width="1920" height="1072" decoding="async">
     </div>
 
     <div class="about-copy reveal">
