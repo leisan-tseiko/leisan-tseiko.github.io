@@ -187,7 +187,6 @@
       display:flex;
       gap:10px;
       flex-wrap:wrap;
-      margin-left:40px;
     }
 
     .pill{
@@ -245,20 +244,8 @@
       object-fit:cover;
     }
 
-    .photo-placeholder{
-      color:#6f7a70;
-      text-align:center;
-      padding:24px;
-      line-height:1.7;
-      font-size:0.98rem;
-    }
-
     .section{
       padding:88px 0;
-    }
-
-    .about-bg{
-      background:linear-gradient(180deg, #ffffff 0%, var(--light) 100%);
     }
 
     .section-light{
@@ -294,63 +281,63 @@
       margin:0 auto;
     }
 
-    .about-box{
+    .eyebrow{
+      margin:0 0 12px;
+      font-size:12px;
+      font-weight:600;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      color:var(--green-soft);
+    }
+
+    .about{
       display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:24px;
-      align-items:start;
-      margin-top:28px;
-    }
-
-    .about-card{
+      grid-template-columns:45% 55%;
       background:#ffffff;
-      border:1px solid var(--line);
-      border-radius:22px;
-      padding:26px;
-      box-shadow:0 12px 28px rgba(26,61,43,0.04);
-      display:flex;
-      flex-direction:column;
-      gap:14px;
+      overflow:hidden;
     }
 
-    .about-card-head{
-      display:flex;
-      align-items:center;
-      gap:12px;
+    .about-media{
+      position:relative;
+      min-height:100%;
+      background:linear-gradient(160deg, #dde6df 0%, var(--light-2) 45%, var(--light) 100%);
+      -webkit-mask-image:linear-gradient(to right, #000 55%, transparent);
+      mask-image:linear-gradient(to right, #000 55%, transparent);
     }
 
-    .about-card-head strong{
-      font-size:1.2rem;
+    .about-media img{
+      position:absolute;
+      inset:0;
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      filter:saturate(.6) brightness(1.05);
+      opacity:.55;
     }
 
-    .about-mini{
-      margin:0;
-      color:#111111;
-      line-height:1.8;
-      font-size:1.3rem;
+    .about-copy{
+      align-self:center;
+      max-width:60ch;
+      padding:88px 48px 88px 24px;
     }
 
-    .about-mini strong{
+    .about-copy p:not(.eyebrow){
+      margin:0 0 18px;
+      font-size:1.1rem;
+      line-height:1.7;
       color:var(--text);
     }
 
-    .check-badge{
-      width:36px;
-      height:36px;
-      border-radius:50%;
-      background:var(--check);
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      flex-shrink:0;
-      box-shadow:0 2px 8px rgba(26,122,58,0.4);
+    .about-copy p:last-child{
+      margin-bottom:0;
     }
 
-    .check-badge.small{
-      width:22px;
-      height:22px;
-      margin-top:2px;
-      box-shadow:none;
+    .contact-line{
+      margin:0;
+      max-width:65ch;
+      color:var(--muted);
+      font-size:1.15rem;
+      line-height:1.7;
     }
 
     .projects-grid{
@@ -418,24 +405,11 @@
       font-weight:600;
     }
 
-    .done-label{
-      margin-bottom:8px;
-    }
-
-    .done-list{
-      margin:0 0 12px 0;
-      padding-left:0;
-      list-style:none;
+    .learning-line{
+      margin:28px 0 0;
+      text-align:center;
       color:var(--muted);
-      font-size:1.05rem;
-      line-height:1.9;
-    }
-
-    .done-list li{
-      display:flex;
-      align-items:flex-start;
-      gap:10px;
-      margin-bottom:6px;
+      font-size:1rem;
     }
 
     .project-btn{
@@ -459,9 +433,21 @@
 
     .skills-grid{
       display:grid;
-      grid-template-columns:repeat(3, minmax(0, 1fr));
+      grid-template-columns:1fr;
       gap:20px;
-      margin-top:26px;
+      margin-top:30px;
+    }
+
+    @media (min-width: 680px){
+      .skills-grid{
+        grid-template-columns:repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (min-width: 1100px){
+      .skills-grid{
+        grid-template-columns:repeat(4, minmax(0, 1fr));
+      }
     }
 
     .skill-card{
@@ -555,15 +541,33 @@
       }
 
       .hero-grid,
-      .about-box,
       .projects-grid,
-      .skills-grid,
       .what-grid{
         grid-template-columns:1fr;
       }
 
       .hero-visual{
         min-height:420px;
+      }
+    }
+
+    @media (max-width: 899.98px){
+      .about{
+        grid-template-columns:1fr;
+      }
+
+      .about-media{
+        height:220px;
+        min-height:0;
+        -webkit-mask-image:linear-gradient(to bottom, #000 55%, transparent);
+        mask-image:linear-gradient(to bottom, #000 55%, transparent);
+      }
+
+      .about-copy{
+        max-width:none;
+        width:min(60ch, calc(100% - 48px));
+        margin:0 auto;
+        padding:8px 0 72px;
       }
     }
 
@@ -591,6 +595,10 @@
 
       .section-title{
         font-size:1.8rem;
+      }
+
+      .about-copy{
+        width:calc(100% - 28px);
       }
 
       .hero-visual{
@@ -671,16 +679,14 @@
       <div class="hero-grid">
 
         <div class="hero-copy">
-          <h1>
-            Finance professional<br>
-            growing into <span class="accent">data analytics</span><br>
-            through real projects
-          </h1>
+          <h1>I turn complex financial numbers into <span class="accent">clear answers</span> for people outside finance.</h1>
+
+          <p class="hero-text">Finance &amp; economics professional, 10+ years — budgeting &amp; forecasting · economic modeling · payroll &amp; compensation for 640 employees. U.S. permanent resident, South Florida.</p>
 
           <div class="pill-group">
-            <a class="pill primary" href="#projects">View Projects</a>
-            <a class="pill" href="https://www.linkedin.com/in/l%D0%B5ysan-tseyko/" target="_blank" rel="noopener">LinkedIn</a>
+            <a class="pill primary" href="#projects">View projects</a>
             <a class="pill" href="resume.pdf" target="_blank" rel="noopener">Resume</a>
+            <a class="pill" href="https://www.linkedin.com/in/l%D0%B5ysan-tseyko/" target="_blank" rel="noopener">LinkedIn</a>
           </div>
         </div>
 
@@ -694,38 +700,24 @@
     </div>
   </section>
 
-  <section id="about" class="section about-bg">
-    <div class="container">
-      <h2 class="section-title text-center">About</h2>
-      <p class="section-text section-lead">Finance professional with 10+ years of experience in financial and economic roles, working with financial data, data collection, analytical support, and coordination of financial processes.</p>
+  <section id="about" class="about">
+    <div class="about-media" aria-hidden="true">
+      <!-- images/about-bg.jpg is not in the repo yet; when added, put here: <img src="images/about-bg.jpg" alt=""> -->
+    </div>
 
-      <div class="about-box">
+    <div class="about-copy">
+      <p class="eyebrow">About</p>
+      <h2 class="section-title">Step by step — at any scale</h2>
 
-        <div class="about-card">
-          <div class="about-card-head">
-            <span class="check-badge">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-            </span>
-            <strong>Background</strong>
-          </div>
-          <p class="about-mini">Finance and economic roles with extensive work around data, process support, and analytical coordination.</p>
-        </div>
+      <p>I grew up in a small village and learned early to move forward one step at a time. Then came Moscow — and numbers at a growing scale: a federal research center, the consolidated budget of one of the world's largest metro systems, payroll for 640 employees at a state energy corporation.</p>
 
-        <div class="about-card">
-          <div class="about-card-head">
-            <span class="check-badge">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-            </span>
-            <strong>Current focus</strong>
-          </div>
-          <p class="about-mini">Developing and refining analytical skills, and positioning oneself for career opportunities in the fields of finance and data in the United States.</p>
-        </div>
+      <p>Moving to the U.S. was my biggest project yet. I handled my family's immigration case myself — documents, deadlines, agencies — and brought my whole family here.</p>
 
-      </div>
+      <p>Big projects don't scare me: any scale is a sequence of clear steps. Now in South Florida, I'm doing what I've always done — learning the new system step by step and turning complex numbers into clear answers.</p>
     </div>
   </section>
 
-  <section id="what-i-do" class="section">
+  <section id="what-i-do" class="section section-light">
     <div class="container">
       <h2 class="section-title text-center">What I do</h2>
 
@@ -750,108 +742,99 @@
     </div>
   </section>
 
-  <section id="projects" class="section section-light">
+  <section id="projects" class="section">
     <div class="container">
       <h2 class="section-title text-center">Projects</h2>
-      <p class="section-text section-lead">A growing portfolio of practical work in finance, analytics, and structured data interpretation.</p>
+      <p class="section-text section-lead">Each project shows one side of my work — and who I explained it to.</p>
 
       <div class="projects-grid">
 
         <article class="project-card">
-          <span class="project-tag">Market Analysis</span>
-          <h3>Florida Finance Job Market Analysis</h3>
-          <p>
-            Independent research project analyzing finance and accounting vacancies in Florida.
-            Focused on role demand, recurring requirements, salary observations, and skill trends across job postings.
-          </p>
+          <span class="project-tag">Budgeting · Forecasting</span>
+          <h3>Budget Variance Report &amp; Scenario Forecast</h3>
+          <p>A plan-vs-actual budget for a transport enterprise with variance commentary and three scenarios — base, optimistic, and stress — built on synthetic data.</p>
           <div class="project-meta">
-            <div><strong>Tools:</strong> Excel, structured job tracking, market research</div>
-            <div><strong>Status:</strong> In progress</div>
+            <div><strong>Tools:</strong> Excel</div>
+            <div><strong>Explained for:</strong> department heads, senior management</div>
+            <div><strong>Status:</strong> Coming soon</div>
           </div>
         </article>
 
         <article class="project-card">
-          <span class="project-tag">Excel Analytics</span>
-          <h3>Structuring Financial Data in Excel</h3>
-          <p>
-            This project focuses on structuring and analyzing payroll data at the employee level using Microsoft Excel. The dataset was transformed into a structured analytical model, enabling workforce segmentation, salary comparison, and payroll cost analysis.
-          </p>
+          <span class="project-tag">Payroll</span>
+          <h3>Payroll Reconciliation &amp; Anomaly Check</h3>
+          <p>Employee-level payroll data structured into an analytical model: cleaning, job-function mapping, payroll aggregation, and pivot-table analysis of workforce and compensation. Next step: automated anomaly flags and a monthly reconciliation checklist.</p>
           <div class="project-meta">
-            <div class="done-label"><strong>What was done:</strong></div>
-            <ul class="done-list">
-              <li><span class="check-badge small"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Data cleaning and structuring</li>
-              <li><span class="check-badge small"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Creation of a job function mapping system</li>
-              <li><span class="check-badge small"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Payroll aggregation and metric calculation</li>
-              <li><span class="check-badge small"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Development of Pivot Tables for workforce and compensation analysis</li>
-            </ul>
-            <div><strong>Tools:</strong> Excel • Pivot Tables • Data Structuring • Payroll Analysis</div>
+            <div><strong>Tools:</strong> Excel · Pivot Tables · Power Query</div>
+            <div><strong>Explained for:</strong> payroll team, controller</div>
             <div><strong>Status:</strong> Portfolio project</div>
           </div>
           <a class="project-btn" href="https://docs.google.com/spreadsheets/d/1YlrvCVqJ6WvKdZGRiJXfWQoPRYocBSJP/edit?gid=1706713003#gid=1706713003" target="_blank" rel="noopener">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-            View Project
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            View project
           </a>
         </article>
 
         <article class="project-card">
-          <span class="project-tag">Dashboard Design</span>
-          <h3>Power BI Dashboard Development</h3>
-          <p>
-            Portfolio-oriented dashboard development with a focus on business readability,
-            finance-related KPIs, and clean visual presentation of data.
-          </p>
+          <span class="project-tag">Payroll · Communication</span>
+          <h3>Employee Pay Questions: What People Actually Ask — and a First Look at the US Pay Stub</h3>
+          <p>Real questions employees asked me as the go-to payroll contact for 640 employees (around 20 inquiries a day), and how I explained the answers. Plus a clearly labeled fresh-research section: what I learned decoding my first US pay stub.</p>
           <div class="project-meta">
-            <div><strong>Tools:</strong> Power BI, data visualization, KPI layout</div>
-            <div><strong>Status:</strong> In development</div>
+            <div><strong>Tools:</strong> Excel · public IRS guidance</div>
+            <div><strong>Explained for:</strong> employees</div>
+            <div><strong>Status:</strong> Coming soon</div>
           </div>
         </article>
 
         <article class="project-card">
-          <span class="project-tag">SQL Practice</span>
-          <h3>SQL for Financial Data Analysis</h3>
-          <p>
-            Ongoing technical practice aimed at querying structured datasets,
-            strengthening analytical workflows, and expanding data analysis capability.
-          </p>
+          <span class="project-tag">Research</span>
+          <h3>Florida Finance Job Market Analysis</h3>
+          <p>Analysis of finance and accounting job postings in Florida — role demand, recurring requirements, salary ranges, and the tools employers ask for most.</p>
           <div class="project-meta">
-            <div><strong>Tools:</strong> SQL, structured queries, analytical practice</div>
-            <div><strong>Status:</strong> Learning project</div>
+            <div><strong>Tools:</strong> Excel · structured job tracking</div>
+            <div><strong>Explained for:</strong> job seekers</div>
+            <div><strong>Status:</strong> In progress</div>
           </div>
         </article>
 
       </div>
+
+      <p class="learning-line">Currently learning: SQL · Power BI · QuickBooks Online</p>
     </div>
   </section>
 
-  <section id="skills" class="section">
+  <section id="skills" class="section section-light">
     <div class="container">
-      <h2 class="section-title">Skills</h2>
-      <p class="section-text">
-        A combination of finance background, analytical thinking, and growing technical capability.
-      </p>
+      <h2 class="section-title text-center">Skills</h2>
 
       <div class="skills-grid">
         <div class="skill-card">
-          <h3>Tools</h3>
-          <p>Excel • SQL • Power BI</p>
+          <h3>Budgeting &amp; FP&amp;A</h3>
+          <p>Consolidated budgeting · Variance analysis · Scenario forecasting · Management reporting</p>
         </div>
 
         <div class="skill-card">
-          <h3>Data & Analytics</h3>
-          <p>Financial Data Analysis • Data Collection • Data Interpretation • Dashboard Thinking</p>
+          <h3>Payroll</h3>
+          <p>Payroll analysis &amp; reconciliation · Deductions &amp; settlements · Payroll reporting</p>
         </div>
 
         <div class="skill-card">
-          <h3>Finance Background</h3>
-          <p>Financial Systems • Process Coordination • Analytical Support • Business Insight</p>
+          <h3>Systems &amp; Tools</h3>
+          <p>SAP HCM · 1C ERP · Excel (Pivot Tables, XLOOKUP, Power Query) · Microsoft Office</p>
+        </div>
+
+        <div class="skill-card">
+          <h3>Communication</h3>
+          <p>Stakeholder alignment · Explaining finance to non-finance audiences · Employee inquiries</p>
         </div>
       </div>
     </div>
   </section>
 
-  <section id="contact" class="section section-light">
+  <section id="contact" class="section">
     <div class="container">
-      <h2 class="section-title">Contact</h2>
+      <h2 class="section-title">Let's talk numbers.</h2>
+      <p class="contact-line">Open to finance, FP&amp;A, and payroll roles in South Florida — hybrid or remote.</p>
       <div class="contact-box">
 
         <a class="contact-link" href="mailto:leysantseyko@gmail.com">
