@@ -397,9 +397,15 @@
 
     .what-grid{
       display:grid;
-      grid-template-columns:repeat(3, minmax(0, 1fr));
+      grid-template-columns:1fr;
       gap:20px;
       margin-top:30px;
+    }
+
+    @media (min-width: 680px){
+      .what-grid{
+        grid-template-columns:repeat(2, minmax(0, 1fr));
+      }
     }
 
     /* "Notebook" cards: green spine on the left, gold bookmark ribbon top-right */
@@ -770,8 +776,7 @@
       }
 
       .hero-grid,
-      .projects-grid,
-      .what-grid{
+      .projects-grid{
         grid-template-columns:1fr;
       }
 
@@ -1074,6 +1079,11 @@
         <div class="skill-card">
           <h3>Economic Modeling</h3>
           <p>Driver-based models and forecasting methodologies from years in research. This is where my habit of testing numbers before trusting them comes from.</p>
+        </div>
+
+        <div class="skill-card">
+          <h3>Regulations &amp; Documents</h3>
+          <p>Labor law, tax rules, and primary documents: I study them carefully and translate legal language into clear payroll rules, so every number has a document behind it.</p>
         </div>
       </div>
 
