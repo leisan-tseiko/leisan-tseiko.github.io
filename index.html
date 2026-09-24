@@ -172,11 +172,11 @@
       right:0;
       bottom:0;
       width:100%;
-      height:min(48%, 380px);
+      height:100%;
       opacity:.07;
       pointer-events:none;
-      -webkit-mask-image:linear-gradient(to right, rgba(0,0,0,.35) 0%, rgba(0,0,0,.35) 30%, #000 60%);
-      mask-image:linear-gradient(to right, rgba(0,0,0,.35) 0%, rgba(0,0,0,.35) 30%, #000 60%);
+      -webkit-mask-image:linear-gradient(to right, rgba(0,0,0,.6) 0%, rgba(0,0,0,.6) 30%, #000 60%);
+      mask-image:linear-gradient(to right, rgba(0,0,0,.6) 0%, rgba(0,0,0,.6) 30%, #000 60%);
     }
 
     .hero .container{
@@ -888,7 +888,43 @@
   </header>
 
   <section class="hero">
-    <svg class="hero-bg" viewBox="0 0 1440 320" preserveAspectRatio="xMidYMax slice" fill="none" stroke="#1a3d2b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+    <svg class="hero-bg" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMax slice" fill="none" stroke="#1a3d2b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+      <!-- upper wall: lamps, window, chart board, flow scheme, donut frame, shelf, calendar -->
+      <path d="M430 0V150M410 150H450L466 184H394Z"/>
+      <path d="M1010 0V130M990 130H1030L1046 164H974Z"/>
+
+      <rect x="60" y="220" width="240" height="260" rx="4"/>
+      <path d="M180 220V480M60 350H300"/>
+      <path d="M44 204H316M36 196C50 330 30 440 46 520M324 196C312 320 332 430 318 520"/>
+
+      <rect x="480" y="230" width="300" height="200" rx="6"/>
+      <path d="M500 410H760M500 410V250"/>
+      <rect x="520" y="350" width="22" height="60"/><rect x="556" y="320" width="22" height="90"/><rect x="592" y="370" width="22" height="40"/><rect x="628" y="300" width="22" height="110"/>
+      <path d="M670 390L700 356L728 368L756 312"/>
+      <circle cx="700" cy="356" r="4"/><circle cx="728" cy="368" r="4"/><circle cx="756" cy="312" r="4"/>
+      <path d="M560 430V462M700 430V462"/>
+
+      <rect x="440" y="500" width="96" height="44" rx="8"/>
+      <rect x="600" y="500" width="96" height="44" rx="8"/>
+      <rect x="760" y="500" width="96" height="44" rx="8"/>
+      <path d="M458 516H518M458 528H500M618 516H678M618 528H660M778 516H838M778 528H820"/>
+      <path d="M536 522H594M586 514L594 522L586 530M696 522H754M746 514L754 522L746 530"/>
+
+      <rect x="840" y="250" width="130" height="130" rx="4"/>
+      <circle cx="905" cy="315" r="40"/>
+      <circle cx="905" cy="315" r="20"/>
+      <path d="M905 275V295M943 327L924 320"/>
+
+      <path d="M1060 330H1320M1080 330V352L1100 330M1300 330V352L1280 330"/>
+      <rect x="1086" y="272" width="16" height="58"/><rect x="1106" y="280" width="16" height="50"/><rect x="1126" y="268" width="16" height="62"/>
+      <path d="M1148 330L1166 276L1180 281L1162 330"/>
+      <path d="M1236 300H1276L1270 330H1242Z"/>
+      <path d="M1256 300C1252 284 1240 276 1228 272M1256 300C1260 282 1272 272 1286 268M1256 300V262"/>
+
+      <rect x="1340" y="220" width="84" height="100" rx="4"/>
+      <path d="M1340 244H1424M1368 244V320M1396 244V320M1340 270H1424M1340 296H1424M1360 212V228M1404 212V228"/>
+
+      <g transform="translate(0 580)">
       <!-- floor -->
       <path d="M0 318H1440"/>
       <!-- shelving with binders (left) -->
@@ -933,6 +969,7 @@
       <path d="M1360 170H1480M1360 230H1480"/>
       <rect x="1372" y="124" width="14" height="46"/><rect x="1390" y="124" width="14" height="46"/><rect x="1408" y="124" width="14" height="46"/>
       <rect x="1372" y="184" width="14" height="46"/><rect x="1390" y="184" width="14" height="46"/>
+      </g>
     </svg>
 
     <div class="container">
