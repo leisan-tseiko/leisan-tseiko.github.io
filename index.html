@@ -673,6 +673,29 @@
       background:var(--check-hover);
     }
 
+    .project-actions{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top:20px;
+    }
+
+    .project-actions .project-btn{
+      margin-top:0;
+    }
+
+    .project-btn-outline{
+      background:#ffffff;
+      color:var(--check);
+      border:1.5px solid var(--check);
+      box-shadow:none;
+      padding:10.5px 22.5px;
+    }
+
+    .project-btn-outline:hover{
+      background:var(--mint);
+    }
+
     .learning-line{
       margin:28px 0 0;
       text-align:center;
@@ -1235,10 +1258,16 @@
             <div><strong>Explained for:</strong> payroll team, controller</div>
             <div><strong>Status:</strong> <span class="status status-portfolio">Portfolio project</span></div>
           </div>
-          <a class="project-btn" href="https://docs.google.com/spreadsheets/d/1YlrvCVqJ6WvKdZGRiJXfWQoPRYocBSJP/edit?gid=1706713003#gid=1706713003" target="_blank" rel="noopener">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-            View project
-          </a>
+          <div class="project-actions">
+            <a class="project-btn" href="https://docs.google.com/spreadsheets/d/1YlrvCVqJ6WvKdZGRiJXfWQoPRYocBSJP/edit?gid=1706713003#gid=1706713003" target="_blank" rel="noopener">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              View project
+            </a>
+            <a class="project-btn project-btn-outline" href="projects/hr-payroll-analytics.xlsx" download>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              Download Excel (.xlsx)
+            </a>
+          </div>
         </article>
 
         <article class="project-card">
