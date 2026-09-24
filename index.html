@@ -3,7 +3,25 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Leisan Tseiko | Finance & Data Analytics</title>
+  <title>Leisan Tseiko | Finance &amp; Economics — Budgeting, Payroll, Modeling</title>
+  <meta name="description" content="Finance &amp; economics professional with 10+ years in budgeting, economic modeling, and payroll for 640 employees. I turn complex numbers into clear answers. South Florida.">
+  <link rel="canonical" href="https://leisan-tseiko.github.io/">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Leisan Tseiko | Finance &amp; Economics">
+  <meta property="og:description" content="Finance &amp; economics professional with 10+ years in budgeting, economic modeling, and payroll for 640 employees. I turn complex numbers into clear answers. South Florida.">
+  <meta property="og:image" content="https://leisan-tseiko.github.io/images/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Leisan Tseiko — Finance &amp; Economics">
+  <meta property="og:url" content="https://leisan-tseiko.github.io/">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Leisan Tseiko | Finance &amp; Economics">
+  <meta name="twitter:description" content="Finance &amp; economics professional with 10+ years in budgeting, economic modeling, and payroll for 640 employees. I turn complex numbers into clear answers. South Florida.">
+  <meta name="twitter:image" content="https://leisan-tseiko.github.io/images/og-image.jpg">
+
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
@@ -79,10 +97,35 @@
       padding-left:0px;
     }
 
+    section[id]{
+      scroll-margin-top:78px;
+    }
+
+    a:focus-visible,
+    button:focus-visible{
+      outline:3px solid var(--green-soft);
+      outline-offset:3px;
+      border-radius:6px;
+    }
+
+    .nav-toggle{
+      display:none;
+      align-items:center;
+      justify-content:center;
+      width:44px;
+      height:44px;
+      padding:0;
+      border:1px solid var(--line);
+      border-radius:12px;
+      background:#ffffff;
+      color:var(--green);
+      cursor:pointer;
+    }
+
     .nav-center{
       display:flex;
       justify-content:center;
-      gap:52px;
+      gap:40px;
     }
 
     .nav-center a{
@@ -442,6 +485,24 @@
       font-size:.97rem;
     }
 
+    .what-grid{
+      display:grid;
+      grid-template-columns:repeat(3, minmax(0, 1fr));
+      gap:20px;
+      margin-top:30px;
+    }
+
+    .what-line{
+      margin:36px auto 0;
+      max-width:760px;
+      text-align:center;
+      font-family:"Playfair Display", serif;
+      font-style:italic;
+      font-size:1.3rem;
+      line-height:1.6;
+      color:var(--green);
+    }
+
     .contact-box{
       display:flex;
       flex-direction:column;
@@ -477,7 +538,7 @@
     .footer{
       padding:28px 0 42px;
       text-align:center;
-      color:#7a837b;
+      color:var(--muted);
       font-size:0.95rem;
       border-top:1px solid rgba(0,0,0,0.04);
     }
@@ -496,7 +557,8 @@
       .hero-grid,
       .about-box,
       .projects-grid,
-      .skills-grid{
+      .skills-grid,
+      .what-grid{
         grid-template-columns:1fr;
       }
 
@@ -535,6 +597,49 @@
         min-height:340px;
       }
     }
+
+    @media (max-width: 679.98px){
+      .navbar-inner{
+        grid-template-columns:1fr auto;
+        gap:0;
+        min-height:64px;
+        padding:10px 0;
+      }
+
+      .brand{
+        font-size:1.4rem;
+      }
+
+      .nav-toggle{
+        display:inline-flex;
+      }
+
+      .nav-right{
+        display:none;
+      }
+
+      .nav-center{
+        display:none;
+        grid-column:1 / -1;
+        flex-direction:column;
+        gap:0;
+        margin-top:10px;
+      }
+
+      .nav-center.is-open{
+        display:flex;
+      }
+
+      .nav-center a{
+        padding:12px 4px;
+        border-top:1px solid var(--line);
+        font-size:1.1rem;
+      }
+
+      section[id]{
+        scroll-margin-top:66px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -544,8 +649,13 @@
       <div class="navbar-inner">
         <div class="brand">Leisan Tseiko</div>
 
-        <nav class="nav-center">
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
+        </button>
+
+        <nav id="site-nav" class="nav-center" aria-label="Main">
           <a href="#about">About</a>
+          <a href="#what-i-do">What I do</a>
           <a href="#projects">Projects</a>
           <a href="#skills">Skills</a>
           <a href="#contact">Contact</a>
@@ -612,6 +722,31 @@
         </div>
 
       </div>
+    </div>
+  </section>
+
+  <section id="what-i-do" class="section">
+    <div class="container">
+      <h2 class="section-title text-center">What I do</h2>
+
+      <div class="what-grid">
+        <div class="skill-card">
+          <h3>Budgeting &amp; Planning</h3>
+          <p>Consolidated budgets, variance analysis, scenario forecasting.</p>
+        </div>
+
+        <div class="skill-card">
+          <h3>Payroll &amp; Compensation</h3>
+          <p>Reconciliation, deductions, payroll reporting for 640 employees.</p>
+        </div>
+
+        <div class="skill-card">
+          <h3>Economic Modeling</h3>
+          <p>Driver-based models and forecasting methodologies.</p>
+        </div>
+      </div>
+
+      <p class="what-line">Upward to executives, sideways to department heads, downward to employees — the same numbers, explained for each audience.</p>
     </div>
   </section>
 
@@ -747,6 +882,34 @@
   <footer class="footer">
     <div class="container">© 2026 Leisan Tseiko · Hallandale Beach, FL</div>
   </footer>
+
+  <script>
+    (function(){
+      var toggle = document.querySelector('.nav-toggle');
+      var nav = document.getElementById('site-nav');
+
+      function setOpen(open){
+        toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+        toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+        nav.classList.toggle('is-open', open);
+      }
+
+      toggle.addEventListener('click', function(){
+        setOpen(toggle.getAttribute('aria-expanded') !== 'true');
+      });
+
+      nav.addEventListener('click', function(e){
+        if (e.target.closest('a')) setOpen(false);
+      });
+
+      document.addEventListener('keydown', function(e){
+        if (e.key === 'Escape' && toggle.getAttribute('aria-expanded') === 'true'){
+          setOpen(false);
+          toggle.focus();
+        }
+      });
+    })();
+  </script>
 
 </body>
 </html>
